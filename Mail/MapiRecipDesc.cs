@@ -8,8 +8,8 @@ namespace YACUF.Mail
     {
         public int reserved;
         public int recipClass;
-        public string name;
-        public string address;
+        public string? name;
+        public string? address;
         public int eIDSize;
         public IntPtr entryID;
     }

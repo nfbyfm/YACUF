@@ -103,11 +103,11 @@ namespace YACUF.Utilities
 
             if (typeof(T).IsEnum)
             {
-                string description = enumValue.ToString();
+                string? description = enumValue.ToString();
 
-                if (description.IsValidString())
+                if (description != null)
                 {
-                    FieldInfo fieldInfo = enumValue.GetType().GetField(description);
+                    FieldInfo? fieldInfo = enumValue.GetType().GetField(description);
 
                     if (fieldInfo != null)
                     {
@@ -199,7 +199,7 @@ namespace YACUF.Utilities
         /// <param name="key"></param>
         /// <param name="value"></param>
         /// <returns> true if successfull, false if key already exists</returns>
-        public static bool TryAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+        public static bool TryAdd<TKey, TValue>(this IDictionary<TKey, TValue>? dictionary, TKey key, TValue value)
         {
             if (dictionary == null)
             {

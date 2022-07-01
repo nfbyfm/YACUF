@@ -19,9 +19,17 @@ namespace YACUF.Utilities
         /// <returns>true if string isn't empty, null, or just whitespaces</returns>
         public static bool IsValidString(this string text)
         {
-            return !string.IsNullOrEmpty(text) && !string.IsNullOrWhiteSpace(text);
+            if(text!=null)
+            {
+                return !string.IsNullOrEmpty(text) && !string.IsNullOrWhiteSpace(text);
+            }
+            else
+            {
+                return false;
+            }
         }
 
+        
         #endregion
     }
 }

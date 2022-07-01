@@ -99,26 +99,30 @@ namespace YACUF.Utilities
         /// <returns>description</returns>
         public static string GetEnumDescription<T>(this T enumValue) where T : struct, IConvertible
         {
-            if (!typeof(T).IsEnum || EqualityComparer<T>.Default.Equals(enumValue, default))
-            {
-                return "";
-            }
-            else
+            string result = "";
+
+            if (typeof(T).IsEnum)
             {
                 string? description = enumValue.ToString();
-                FieldInfo? fieldInfo = enumValue.GetType().GetField(description);
 
-                if (fieldInfo != null)
+                if (description.IsValidString())
                 {
-                    var attrs = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), true);
-                    if (attrs != null && attrs.Length > 0)
-                    {
-                        description = ((DescriptionAttribute)attrs[0]).Description;
-                    }
-                }
+                    FieldInfo? fieldInfo = enumValue.GetType().GetField(description);
 
-                return description;
+                    if (fieldInfo != null)
+                    {
+                        var attrs = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), true);
+                        if (attrs != null && attrs.Length > 0)
+                        {
+                            description = ((DescriptionAttribute)attrs[0]).Description;
+                        }
+                    }
+
+                    return description;
+                }
             }
+
+            return result;
         }
 
         #region add / combination-functions

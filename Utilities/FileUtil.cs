@@ -21,7 +21,7 @@ namespace YACUF.Utilities
         /// <param name="xmlObject">object for serialization</param>
         /// <param name="exception">exception triggered if saveing failed</param>
         /// <returns>true if saving was successful</returns>
-        public static bool TrySaveToXMLFile(string fileName, object xmlObject, out Exception? exception)
+        public static bool TrySaveToXMLFile(string fileName, object xmlObject, out Exception exception)
         {
             bool success = false;
             exception = null;
@@ -73,7 +73,7 @@ namespace YACUF.Utilities
         /// <param name="readObject">parsed obejct</param>
         /// <param name="readException">exception triggered if reading from file failed</param>
         /// <returns>true if reading from file succeeded</returns>
-        public static bool TryLoadFromXMLFile<T>(string fileName, out T readObject, out Exception? readException)
+        public static bool TryLoadFromXMLFile<T>(string fileName, out T readObject, out Exception readException)
         {
             bool success = false;
             readObject = default(T);

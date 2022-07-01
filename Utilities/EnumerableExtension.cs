@@ -103,11 +103,11 @@ namespace YACUF.Utilities
 
             if (typeof(T).IsEnum)
             {
-                string? description = enumValue.ToString();
+                string description = enumValue.ToString();
 
                 if (description.IsValidString())
                 {
-                    FieldInfo? fieldInfo = enumValue.GetType().GetField(description);
+                    FieldInfo fieldInfo = enumValue.GetType().GetField(description);
 
                     if (fieldInfo != null)
                     {

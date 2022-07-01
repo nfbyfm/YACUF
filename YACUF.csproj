@@ -1,19 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.0.2</Version>
+    <Version>1.0.0.3</Version>
     <Description>C-sharp utility-library.</Description>
     <PackageProjectUrl>https://github.com/nfbyfm/YACUF</PackageProjectUrl>
     <Copyright>nfbyfm</Copyright>
     <RepositoryUrl>https://github.com/nfbyfm/YACUF</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Added file-utility-functions.</PackageReleaseNotes>
+    <PackageReleaseNotes></PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.html</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>

@@ -21,12 +21,12 @@ namespace YACUF.Mail
 
         public bool AddRecipientCC(string email)
         {
-            return AddRecipient(email, HowTo.MAPI_TO);
+            return AddRecipient(email, HowTo.MAPI_CC);
         }
 
         public bool AddRecipientBCC(string email)
         {
-            return AddRecipient(email, HowTo.MAPI_TO);
+            return AddRecipient(email, HowTo.MAPI_BCC);
         }
 
         public void AddAttachment(string strAttachmentFileName)

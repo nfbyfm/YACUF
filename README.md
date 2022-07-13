@@ -4,12 +4,20 @@ Yet another c-sharp utility-framework. Library with classes and functions often 
 
 ## Utilities
 
+### Enumerable extensions
 Contains simple methods for checking / adding entries in a class-instance implementing the IEnumerable-Interface.
 
+### File utilites
+
+Constains methods for saving / loading serializable objects to xml-files.
+
+### Crypto utilities
+
+Methods for saving and loading serializable objects as encrypted binary-files.
 
 ## Mail
 
-Code based on based / copied from [David M Brooks code-project-solution](https://www.codeproject.com/Articles/17561/Programmatically-adding-attachments-to-emails-in-C).
+Code based on / copied from [David M Brooks code-project-solution](https://www.codeproject.com/Articles/17561/Programmatically-adding-attachments-to-emails-in-C).
 
 
 ```csharp

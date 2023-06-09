@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.0.6</Version>
+    <Version>1.0.0.7</Version>
     <Description>C-sharp utility-library.</Description>
     <PackageProjectUrl>https://github.com/nfbyfm/YACUF</PackageProjectUrl>
     <Copyright>nfbyfm</Copyright>

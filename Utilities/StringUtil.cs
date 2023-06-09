@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace YACUF.Utilities
+﻿namespace YACUF.Utilities
 {
     /// <summary>
     /// utility-class with functions for strings
@@ -17,7 +11,7 @@ namespace YACUF.Utilities
         /// </summary>
         /// <param name="text">string to check</param>
         /// <returns>true if string isn't empty, null, or just whitespaces</returns>
-        public static bool IsValidString(this string text)
+        public static bool IsValidString(this string? text)
         {
             if(text!=null)
             {

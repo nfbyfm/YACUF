@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 
-namespace YACUF.Utilities
+namespace YACUF.Extensions
 {
     /// <summary>
     /// class with extension-methods for enumerables
@@ -42,7 +42,7 @@ namespace YACUF.Utilities
             if (source != null)
             {
                 elementCount = source.Count();
-                result = (elementCount > 0);
+                result = elementCount > 0;
             }
 
             return result;
@@ -60,7 +60,7 @@ namespace YACUF.Utilities
 
             if (source != null)
             {
-                result = (source.Count() > 0);
+                result = source.Count() > 0;
             }
 
             return result;
@@ -79,15 +79,13 @@ namespace YACUF.Utilities
 
             if (source != null)
             {
-                result = (source.Count() == expectedElementCount);
+                result = source.Count() == expectedElementCount;
             }
 
             return result;
         }
 
         #endregion
-
-
 
         /// <summary>
         /// gets the description of an enum (if '[Description("")]' is written above an enum-items)

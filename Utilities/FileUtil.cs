@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
+using YACUF.Extensions;
 
 namespace YACUF.Utilities
 {

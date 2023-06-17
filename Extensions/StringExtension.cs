@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using YACUF.Models;
 
 namespace YACUF.Extensions
 {
@@ -23,6 +25,18 @@ namespace YACUF.Extensions
                 return false;
         }
 
+        /// <summary>
+        /// check if the current string might be an URL
+        /// </summary>
+        /// <param name="value">the text to check</param>
+        /// <returns>true if the given text contains 'www' or 'http'</returns>
+        public static bool IsURL(this string? value)
+        {
+            if (value.IsValidString())
+                return value.ToLower().Contains("www") || value.ToLower().Contains("http");
+            else
+                return false;
+        }
         #endregion
 
         #region getter functions
@@ -72,6 +86,51 @@ namespace YACUF.Extensions
             return hasTrailingNumberEnd;
         }
 
+        /// <summary>
+        /// tries to get the basic file type of the current string (idealy a file path), using default video extensions
+        /// </summary>
+        /// <param name="filePath">the string to check (idealy a file path)</param>
+        /// <returns>the basic file type</returns>
+        public static BasicFileType GetBasicFileType(this string? filePath)
+        {
+            return filePath.GetBasicFileType(new() { ".mp4", ".mpeg", ".mpg", ".webm", ".avi" });
+        }
+
+        /// <summary>
+        /// tries to get the basic file type of the current string (idealy a file path)
+        /// </summary>
+        /// <param name="filePath">the string to check (idealy a file path)</param>
+        /// <param name="videoExtensions">list of accepted video extensions</param>
+        /// <returns>the basic file type</returns>
+        public static BasicFileType GetBasicFileType(this string? filePath, List<string> videoExtensions)
+        {
+            BasicFileType result = BasicFileType.Other;
+
+            if(filePath.IsValidString())
+            {
+                filePath = filePath.ToLower();
+
+                if (filePath.EndsWith(".txt"))
+                    result = BasicFileType.Text;
+                else if (filePath.EndsWith(".xml"))
+                    result = BasicFileType.XML;
+                else if (filePath.EndsWith(".mp3"))
+                    result = BasicFileType.MP3;
+                else
+                {
+                    foreach(string vidEx in videoExtensions)
+                    {
+                        if(filePath.EndsWith(vidEx))
+                        {
+                            result = BasicFileType.Video;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
         #endregion
     }
 }

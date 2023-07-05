@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
@@ -19,7 +20,7 @@ namespace YACUF.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>
         /// <returns></returns>
-        public static bool AnyOrNotNull<T>(this IEnumerable<T> source)
+        public static bool AnyOrNotNull<T>([NotNullWhen(false)] this IEnumerable<T>? source)
         {
             if (source != null && source.Any())
                 return true;
@@ -34,7 +35,7 @@ namespace YACUF.Extensions
         /// <param name="source">IEnumerable to check</param>
         /// <param name="elementCount">number of elements</param>
         /// <returns>true if at least one element exists</returns>
-        public static bool HasElements<T>(this IEnumerable<T> source, out int elementCount)
+        public static bool HasElements<T>([NotNullWhen(false)] this IEnumerable<T>? source, out int elementCount)
         {
             bool result = false;
             elementCount = 0;
@@ -54,7 +55,7 @@ namespace YACUF.Extensions
         /// <typeparam name="T"></typeparam>
         /// <param name="source">IEnumerable to check</param>
         /// <returns>true if at least one element exists</returns>
-        public static bool HasElements<T>(this IEnumerable<T> source)
+        public static bool HasElements<T>([NotNullWhen(false)] this IEnumerable<T>? source)
         {
             bool result = false;
 
@@ -73,7 +74,7 @@ namespace YACUF.Extensions
         /// <param name="source">IEnumerable to check</param>
         /// <param name="expectedElementCount">expected number of elements</param>
         /// <returns>true if number of elements is equal to expected amount</returns>
-        public static bool HasXElements<T>(this IEnumerable<T> source, int expectedElementCount)
+        public static bool HasXElements<T>([NotNullWhen(false)] this IEnumerable<T>? source, int expectedElementCount)
         {
             bool result = false;
 
